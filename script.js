@@ -1,6 +1,6 @@
 // Host Finder Frontend
 // Replace with your actual Worker URL after deployment
-const API_URL = 'https://host-finder.adamlebowski.workers.dev/';
+const API_URL = 'https://host-finder.adamlebowski.workers.dev';
 
 let currentResults = [];
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Host Finder - Multi-Platform Lead Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎙️ Host Finder</h1>
+      <p>Find potential hosts across Reddit, Twitter, LinkedIn, Twitch, and the web</p>
+    </div>
+    
+    <div class="search-box">
+      <form id="searchForm">
+        <div class="form-group">
+          <label for="topic">Topic / Community</label>
+          <input 
+            type="text" 
+            id="topic" 
+            placeholder="e.g., crypto, fitness, AI, gaming..." 
+            required 
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="count">Number of Leads (max 500)</label>
+          <input 
+            type="number" 
+            id="count" 
+            min="10" 
+            max="500" 
+            value="100" 
+            required 
+          />
+        </div>
+        
+        <div class="form-group">
+          <label>Data Sources</label>
+          <div class="sources-grid">
+            <label class="source-checkbox checked">
+              <input type="checkbox" name="source" value="reddit" checked />
+              <span>Reddit</span>
+            </label>
+            <label class="source-checkbox checked">
+              <input type="checkbox" name="source" value="twitter" checked />
+              <span>Twitter</span>
+            </label>
+            <label class="source-checkbox checked">
+              <input type="checkbox" name="source" value="linkedin" checked />
+              <span>LinkedIn</span>
+            </label>
+            <label class="source-checkbox checked">
+              <input type="checkbox" name="source" value="twitch" checked />
+              <span>Twitch</span>
+            </label>
+            <label class="source-checkbox checked">
+              <input type="checkbox" name="source" value="websites" checked />
+              <span>Websites</span>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" id="submitBtn">Find Hosts</button>
+        <div id="status" class="status"></div>
+      </form>
+    </div>
+    
+    <div id="results" class="results">
+      <div class="results-header">
+        <h2>Results (<span id="resultCount">0</span> hosts found)</h2>
+        <button class="export-btn" id="exportBtn">Export to CSV</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Platform</th>
+            <th>Username</th>
+            <th>Source</th>
+            <th>Reasoning</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
